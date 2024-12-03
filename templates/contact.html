@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %} Mysite - Contacto {% endblock %}
+{% block content %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>Contactanos</h2>
+
+
+                        <form method="post" >
+
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="{{form.email.id_for_label}}" class="form-label">Email Address</label>
+                                {{form.email}}
+                            </div>
+                            <div class="mb-3">
+                                <label for="{{form.comment.id_for_label}}" class="form-label">Comentarios</label>
+                                {{form.comment}}
+                            </div>
+
+                         </form>
+                </div>
+        </div>
+            <div class="row">
+                <div class="col">
+                    {{form.firstName}}
+
+                </div>
+                <div class="col">
+                    {{form.lastName}}
+                </div>
+            </div>
+            <button type="submit">Enviar Contacto</button>
+    </div>
+{% endblock  %}
+
+
+

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} Mysite - Testimonios {% endblock %}
+
+{% block content %}
+    <h1>Testimonios {{first_name}} {{lastName}}</h1>
+     {% for persona in data %}
+        <p>{{persona.name}} --- {{persona.testimonio}}</p>
+
+    {% endfor %}
+
+{% endblock  %}
+
+
+
+

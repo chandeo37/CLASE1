@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %} Mysite - Home {% endblock %}
+{% block content %}
+    <h1>Welcome..., {{first_name}} {{lastName}}</h1>
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}">Salir</a>
+
+    {% endif %}
+
+{% endblock  %}

@@ -1,0 +1,14 @@
+{% extends "general/base.html" %}
+
+{% block title %} Dashboard - Home {% endblock%}
+
+{% block content%}
+    <h>Dashboard</h>
+    {% if request.user.is_authenticated %}
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Salir</button>
+
+        </form>
+    {% endif %}
+{% endblock %}
